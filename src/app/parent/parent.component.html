@@ -1,0 +1,10 @@
+<div class="h-screen w-full flex-col items-center p-8">
+  <h1 class="text-2xl font-semibold my-4 text-center">Parent</h1>
+  <div class="w-full flex justify-end px-10">
+    <button (click)="clearAll()" class="bg-red-400 hover:bg-red-600 text-white rounded-md px-3 py-2"> Clear Child 2</button>
+  </div>
+  <div class="flex flex-row gap-10 p-10 w-full">
+    <app-child-one class="w-1/2" (add)="addItem($event)"></app-child-one>
+    <app-child-two class="w-1/2" [list]="secondChildData" (deleteFromList)="deleteItem($event)"></app-child-two>
+  </div>
+</div>
