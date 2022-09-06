@@ -9,11 +9,12 @@ export interface Item {
   selector: 'app-child-two',
   templateUrl: './child-two.component.html',
   styleUrls: ['./child-two.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChildTwoComponent implements OnInit {
 
   @Input() list: Item[] = [];
+  @Input() title: string | null = 'Child 2';
   @Output() deleteFromList: EventEmitter<Item> = new EventEmitter<Item>()
 
   constructor() { }

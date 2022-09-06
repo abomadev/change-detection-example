@@ -8,6 +8,8 @@ import { Item } from './child-two/child-two.component';
 })
 export class ParentComponent implements OnInit {
 
+  secondChildTitle = '';
+
   secondChildData: Item[] = [];
 
   constructor() { }
@@ -17,6 +19,10 @@ export class ParentComponent implements OnInit {
 
   addItem(item: Item){
     this.secondChildData.push(item);
+
+    // const arr = [...this.secondChildData]
+    // arr.push(item)
+    // this.secondChildData = arr;
   }
 
   clearAll(){
@@ -25,7 +31,6 @@ export class ParentComponent implements OnInit {
 
   deleteItem(item: Item){
     this.secondChildData = this.secondChildData.filter(i => i.id !== item.id);
-    // console.log(this.list)
   }
 
 }
