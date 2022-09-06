@@ -9,7 +9,7 @@ export interface Item {
   selector: 'app-child-two',
   templateUrl: './child-two.component.html',
   styleUrls: ['./child-two.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChildTwoComponent implements OnInit {
 
