@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 import { Item } from './child-two/child-two.component';
 
 @Component({
@@ -12,7 +13,7 @@ export class ParentComponent implements OnInit {
 
   secondChildData: Item[] = [];
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
   }
@@ -27,10 +28,15 @@ export class ParentComponent implements OnInit {
 
   clearAll(){
     this.secondChildData = []
+    this.dataService.clear();
   }
 
   deleteItem(item: Item){
     this.secondChildData = this.secondChildData.filter(i => i.id !== item.id);
+  }
+
+  fetchList(){
+    // this.dataService.fetchItems();
   }
 
 }

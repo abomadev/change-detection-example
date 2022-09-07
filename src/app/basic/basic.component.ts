@@ -8,14 +8,12 @@ import { ApplicationRef, Component, OnInit } from '@angular/core';
 export class BasicComponent {
   counter = 0;
 
-  constructor(private appRef: ApplicationRef){
+  constructor(){
     // setInterval(() => this.increment(),1000)
   }
 
   increment(){
     this.counter++;
-    console.log("viewCount",this.appRef.viewCount)
-    console.dir(this.appRef)
   }
 
 }

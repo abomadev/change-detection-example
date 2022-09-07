@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Observable, of, tap } from 'rxjs';
+import { DataService } from 'src/app/services/data.service';
 
 export interface Item {
   id: number;
@@ -9,17 +11,25 @@ export interface Item {
   selector: 'app-child-two',
   templateUrl: './child-two.component.html',
   styleUrls: ['./child-two.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ChildTwoComponent implements OnInit {
+export class ChildTwoComponent implements OnChanges {
 
   @Input() list: Item[] = [];
   @Input() title: string | null = 'Child 2';
   @Output() deleteFromList: EventEmitter<Item> = new EventEmitter<Item>()
 
-  constructor() { }
 
+  count = this.list.length
+  
+  constructor() { }
+  
   ngOnInit(): void {
+  }
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    // console.log({changes})
+    // this.count = changes['list'].currentValue.length
+    
   }
 
   deleteItem(item: Item){

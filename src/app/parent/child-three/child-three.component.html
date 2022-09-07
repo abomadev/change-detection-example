@@ -1,0 +1,14 @@
+
+<div class="border border-4 border-green-500 h-full w-full flex flex-col grow items-center rounded-md">
+  <h1 class="text-2xl font-semibold my-4">Child 3</h1>
+  <div class="h-full  flex flex-col justify-between w-full p-4">
+    <ul class="w-full">
+      <li *ngFor="let item of items"> 
+        <app-child-two-item [item]="item" (delete)="deleteItem($event)"></app-child-two-item>
+      </li>
+    </ul>
+  
+    <button class="px-3 py-2 bg-indigo-600 text-white rounded-md mx-4" (click)="toggle()">{{ toggled ? 'ON' : 'OFF' }}</button>
+  
+  </div>
+</div>
