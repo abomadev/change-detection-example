@@ -27,7 +27,7 @@ export class ChildTwoComponent implements OnChanges {
   }
   
   ngOnChanges(changes: SimpleChanges): void {
-    console.log({changes})
+    // console.log({changes})
     if(changes['list']){
       this.count = changes['list'].currentValue.length
     }
