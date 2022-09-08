@@ -6,7 +6,7 @@
     <!-- <button (click)="fetchList()" class="bg-red-400 hover:bg-red-600 text-white rounded-md px-3 py-2">Fetch list</button> -->
     <button (click)="clearAll()" class="bg-red-400 hover:bg-red-600 text-white rounded-md px-3 py-2"> Clear All</button>
   </div>
-  <div class="flex flex-row gap-10 p-10 w-full">
+  <div class="flex flex-row gap-10 p-10 h-5/6 w-full">
     <app-child-one class="w-1/3" (add)="addItem($event)"></app-child-one>
     <app-child-two class="w-1/3" [title]="secondChildTitle" [list]="secondChildData" (deleteFromList)="deleteItem($event)"></app-child-two>
     <app-child-three class="w-1/3"></app-child-three>

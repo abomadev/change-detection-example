@@ -16,4 +16,9 @@ export class ChildTwoChildComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  toggle(){
+    this.toggled = !this.toggled
+  }
+  
 }
